@@ -1,5 +1,4 @@
 import re
-
 def checkIP():
     number = input('Enter what is displayed: ')
     while True:
@@ -14,4 +13,16 @@ def checkIP():
         else:
             print('-1')
             break
+checkIP()
+
+#This is a second function.
+import ipaddress
+def checkIP():
+    number = input('Enter the number you have: ')
+    try:
+        iP = ipaddress.ip_address(number)
+        if iP:
+            print(iP.version)
+    except:
+        print('-1')
 checkIP()
