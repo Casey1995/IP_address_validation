@@ -23,3 +23,19 @@ def checkIP():
     except:
         print('-1')
 checkIP()
+
+#A more standard function with error catch.
+import re
+def checkIP():
+    try:
+        number = input('Enter your IP address: ')
+        # Alternate IPv4 regex. ipv4 = re.search('(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})', number)
+        ipv4 = re.search('([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})', number)
+        ipv6 = re.search('(([a-f0-9:]+:+)+[a-f0-9]+)', number)
+        if ipv4:
+            print('This is version 4')
+        elif ipv6:
+            print('This is version 6')
+    except:
+        print('Invalid IP')
+checkIP()
